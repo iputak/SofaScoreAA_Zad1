@@ -12,7 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import contacts.Contact
 import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_second.*
-import utilities.InjectorUtils
+
 
 
 class MainActivity : AppCompatActivity() {
