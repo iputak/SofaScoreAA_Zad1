@@ -1,12 +1,12 @@
 package hr.vsite.map.sofascoreaa_zad1
 
-import android.content.Context
+import android.app.Activity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import contacts.Contact
 import hr.vsite.map.sofascoreaa_zad1.databinding.FragmentFirstBinding
@@ -19,18 +19,20 @@ class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
-    var gender = "Male"
+
     var spinner = "Croatian"
 
     lateinit var option: Spinner
-
+    lateinit var ACTIVITY: MainActivity
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         val root = binding.root
-
+        //var genderFromActivity = ACTIVITY.gender.toString()
+        var genderFromActivity = "Male"
+        //Add button click
         binding.buttonAddContact.setOnClickListener {
             if(validate()){
                 val contact = Contact(
@@ -39,7 +41,7 @@ class FirstFragment : Fragment() {
                     binding.etAge.text.toString().toInt(),
                     binding.etOib.text.toString().toLong(),
                     binding.etNumber.text.toString().toLong(),
-                    gender,
+                    genderFromActivity,
                     spinner
                 )
                 viewModel.addContact(contact)
@@ -69,20 +71,6 @@ class FirstFragment : Fragment() {
         return root
     }
     // Todo: Puca na klik
-    fun onRadioButtonClick(view: View){
-
-        if (view is RadioButton){
-
-            when(view.id){
-                R.id.radio_male -> {
-                    //gender = "Male"
-                }
-                R.id.radio_female -> {
-                    //gender = "Female"
-                }
-            }
-        }
-    }
 
     private fun validate() :Boolean{
         if(binding.etFirstName.getCurrentText().isEmpty()){

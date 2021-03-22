@@ -1,6 +1,8 @@
 package hr.vsite.map.sofascoreaa_zad1
 
 import android.os.Bundle
+import android.view.View
+import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -10,7 +12,7 @@ import hr.vsite.map.sofascoreaa_zad1.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
+    var gender = "Male"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -21,6 +23,20 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setupWithNavController(navController)
 
+    }
+    fun onRadioButtonClick(view: View){
+
+        if (view is RadioButton){
+
+            when(view.id){
+                R.id.radio_male -> {
+                    gender = "Male"
+                }
+                R.id.radio_female -> {
+                    gender = "Female"
+                }
+            }
+        }
     }
 
 }
