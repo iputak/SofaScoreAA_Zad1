@@ -119,6 +119,7 @@
             app:layout_constraintTop_toBottomOf="@+id/et_number"
             />
         <include
+            android:id="@+id/radio_group"
             layout="@layout/radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

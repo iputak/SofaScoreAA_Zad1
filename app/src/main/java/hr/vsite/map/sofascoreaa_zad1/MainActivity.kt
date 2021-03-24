@@ -24,19 +24,6 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(navController)
 
     }
-    fun onRadioButtonClick(view: View){
 
-        if (view is RadioButton){
-
-            when(view.id){
-                R.id.radio_male -> {
-                    gender = "Male"
-                }
-                R.id.radio_female -> {
-                    gender = "Female"
-                }
-            }
-        }
-    }
 
 }

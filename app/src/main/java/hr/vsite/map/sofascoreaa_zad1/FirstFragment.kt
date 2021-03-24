@@ -20,9 +20,8 @@ class FirstFragment : Fragment() {
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
 
-    var spinner = "Croatian"
 
-    lateinit var option: Spinner
+
     lateinit var ACTIVITY: MainActivity
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,8 +29,8 @@ class FirstFragment : Fragment() {
     ): View? {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         val root = binding.root
-        //var genderFromActivity = ACTIVITY.gender.toString()
-        var genderFromActivity = "Male"
+        var spinner = ""
+        var gender = "Male"
         //Add button click
         binding.buttonAddContact.setOnClickListener {
             if(validate()){
@@ -41,10 +40,12 @@ class FirstFragment : Fragment() {
                     binding.etAge.text.toString().toInt(),
                     binding.etOib.text.toString().toLong(),
                     binding.etNumber.text.toString().toLong(),
-                    genderFromActivity,
+                    gender,
                     spinner
                 )
+                //Dodavanje unesenih podataka
                 viewModel.addContact(contact)
+                //Reset EditText-ova
                 binding.etFirstName.reset()
                 binding.etLastName.reset()
                 binding.etAge.setText("")
@@ -55,9 +56,7 @@ class FirstFragment : Fragment() {
 
         //Spinner
         val options = arrayOf("Croatian", "English")
-       // Todo: Ovdje puca
-        // option.adapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, options)
-/*
+        binding.spOption.adapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, options)
         binding.spOption.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
@@ -65,32 +64,36 @@ class FirstFragment : Fragment() {
                 spinner = options.get(position)
             }
         }
-*/
 
+        binding.radioGroup.radioMale.setOnClickListener { gender = "Male" }
+        binding.radioGroup.radioFemale.setOnClickListener { gender = "Female" }
 
         return root
     }
     // Todo: Puca na klik
 
     private fun validate() :Boolean{
-        if(binding.etFirstName.getCurrentText().isEmpty()){
-            // Todo: postaviti error --> kako ga dohvatiti?
+        var flag = true
+        if(binding.etFirstName.getCurrentText().isNullOrEmpty()){
 
-            return false
+            flag = false
         }
-        if(binding.etLastName.getCurrentText().isEmpty()){
-            // Todo: postaviti error --> kako ga dohvatiti?
+        if(binding.etLastName.getCurrentText().isNullOrEmpty()){
 
-            return false
+            flag = false
         }
-        if(binding.etAge.toString().isEmpty()){
-            binding.etAge.error = "Upisite godine"
-            return false
+        if(binding.etAge.text.toString().isNullOrEmpty()){
+            binding.etAge.error = "Enter your age"
+            flag = false
         }
-        if(binding.etOib.toString().isEmpty()){
-            binding.etOib.error = "Upisite godine"
-            return false
+        if(binding.etOib.text.toString().isNullOrEmpty()){
+            binding.etOib.error = "Enter your OIB"
+            flag = false
         }
-        return true
+        if(binding.etNumber.text.toString().isNullOrEmpty()){
+            binding.etNumber.error = "Enter your number"
+            flag = false
+        }
+        return flag
     }
 }
