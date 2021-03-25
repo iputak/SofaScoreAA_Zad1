@@ -30,6 +30,9 @@
             android:layout_height="wrap_content"
             app:textViewText="@string/firstName"
             app:editTextHint="@string/firstName"
+            app:dataType="0"
+            app:dataLength="20"
+            app:errorText="@string/firstNameError"
             app:layout_constraintTop_toBottomOf="@id/tv_headline" />
 
         <hr.vsite.map.sofascoreaa_zad1.EditStringText
@@ -38,77 +41,44 @@
             android:layout_height="wrap_content"
             app:textViewText="@string/lastName"
             app:editTextHint="@string/lastName"
+            app:dataType="0"
+            app:dataLength="20"
+            app:errorText="@string/lastNameError"
             app:layout_constraintTop_toBottomOf="@id/et_first_Name" />
 
-        <TextView
-            android:id="@+id/tv_age"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:maxLines="1"
-            android:text="@string/age"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_last_name"
-            />
-
-        <EditText
+        <hr.vsite.map.sofascoreaa_zad1.EditStringText
             android:id="@+id/et_age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:ems="10"
-            android:hint="@string/twenty"
-            android:inputType="number"
-            android:maxLength="3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_age"
-            />
-
-        <TextView
-            android:id="@+id/tv_oib"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/oib"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_age"
-            />
+            app:textViewText="@string/age"
+            app:editTextHint="@string/twenty"
+            app:dataType="1"
+            app:dataLength="150"
+            app:errorText="@string/lastNameError"
+            app:layout_constraintTop_toBottomOf="@id/et_last_name" />
 
-        <EditText
+        <hr.vsite.map.sofascoreaa_zad1.EditStringText
             android:id="@+id/et_oib"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:ems="10"
-            android:inputType="number"
-            android:maxLength="11"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_oib"
-            />
-
-        <TextView
-            android:id="@+id/tv_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/number"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_oib"
-            />
+            app:textViewText="@string/oib"
+            app:editTextHint="@string/oibHint"
+            app:dataType="2"
+            app:dataLength="11"
+            app:errorText="@string/oibError"
+            app:layout_constraintTop_toBottomOf="@id/et_age" />
 
-        <EditText
+        <hr.vsite.map.sofascoreaa_zad1.EditStringText
             android:id="@+id/et_number"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:ems="10"
-            android:inputType="number"
-            android:maxLength="11"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_number"
-            />
+            app:textViewText="@string/number"
+            app:editTextHint="@string/number"
+            app:dataType="2"
+            app:dataLength="11"
+            app:errorText="@string/oibError"
+            app:layout_constraintTop_toBottomOf="@id/et_oib" />
+
         <TextView
             android:id="@+id/tv_gender"
             android:layout_width="match_parent"

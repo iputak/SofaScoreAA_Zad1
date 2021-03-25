@@ -33,13 +33,13 @@ class FirstFragment : Fragment() {
         var gender = "Male"
         //Add button click
         binding.buttonAddContact.setOnClickListener {
-            if(validate()){
+
                 val contact = Contact(
                     binding.etFirstName.getCurrentText(),
                     binding.etLastName.getCurrentText(),
-                    binding.etAge.text.toString().toInt(),
-                    binding.etOib.text.toString().toLong(),
-                    binding.etNumber.text.toString().toLong(),
+                    binding.etAge.getCurrentText().toInt(),
+                    binding.etOib.getCurrentText().toLong(),
+                    binding.etNumber.getCurrentText().toLong(),
                     gender,
                     spinner
                 )
@@ -48,10 +48,10 @@ class FirstFragment : Fragment() {
                 //Reset EditText-ova
                 binding.etFirstName.reset()
                 binding.etLastName.reset()
-                binding.etAge.setText("")
-                binding.etOib.setText("")
-                binding.etNumber.setText("")
-            }
+                binding.etAge.reset()
+                binding.etOib.reset()
+                binding.etNumber.reset()
+
         }
 
         //Spinner
@@ -70,30 +70,6 @@ class FirstFragment : Fragment() {
 
         return root
     }
-    // Todo: Puca na klik
 
-    private fun validate() :Boolean{
-        var flag = true
-        if(binding.etFirstName.getCurrentText().isNullOrEmpty()){
 
-            flag = false
-        }
-        if(binding.etLastName.getCurrentText().isNullOrEmpty()){
-
-            flag = false
-        }
-        if(binding.etAge.text.toString().isNullOrEmpty()){
-            binding.etAge.error = "Enter your age"
-            flag = false
-        }
-        if(binding.etOib.text.toString().isNullOrEmpty()){
-            binding.etOib.error = "Enter your OIB"
-            flag = false
-        }
-        if(binding.etNumber.text.toString().isNullOrEmpty()){
-            binding.etNumber.error = "Enter your number"
-            flag = false
-        }
-        return flag
-    }
 }
