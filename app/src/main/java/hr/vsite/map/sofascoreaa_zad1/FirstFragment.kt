@@ -33,7 +33,7 @@ class FirstFragment : Fragment() {
         var gender = "Male"
         //Add button click
         binding.buttonAddContact.setOnClickListener {
-
+            if(binding.etFirstName.validate() && binding.etLastName.validate() && binding.etAge.validate() && binding.etOib.validate() && binding.etNumber.validate()) {
                 val contact = Contact(
                     binding.etFirstName.getCurrentText(),
                     binding.etLastName.getCurrentText(),
@@ -51,7 +51,7 @@ class FirstFragment : Fragment() {
                 binding.etAge.reset()
                 binding.etOib.reset()
                 binding.etNumber.reset()
-
+            }
         }
 
         //Spinner
