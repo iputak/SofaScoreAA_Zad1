@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        tools:context=".FirstFragment"
+        >
+        <TextView
+            android:id="@+id/tv_headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/createNewPerson"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <hr.vsite.map.sofascoreaa_zad1.EditStringText
+            android:id="@+id/et_first_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewText="@string/firstName"
+            app:editTextHint="@string/firstName"
+            app:dataType="0"
+            app:dataLength="20"
+            app:errorText="@string/firstNameError"
+            app:layout_constraintTop_toBottomOf="@id/tv_headline" />
+
+        <hr.vsite.map.sofascoreaa_zad1.EditStringText
+            android:id="@+id/et_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewText="@string/lastName"
+            app:editTextHint="@string/lastName"
+            app:dataType="0"
+            app:dataLength="20"
+            app:errorText="@string/lastNameError"
+            app:layout_constraintTop_toBottomOf="@id/et_first_Name" />
+
+        <hr.vsite.map.sofascoreaa_zad1.EditStringText
+            android:id="@+id/et_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewText="@string/age"
+            app:editTextHint="@string/twenty"
+            app:dataType="1"
+            app:dataLength="150"
+            app:errorText="@string/lastNameError"
+            app:layout_constraintTop_toBottomOf="@id/et_last_name" />
+
+        <hr.vsite.map.sofascoreaa_zad1.EditStringText
+            android:id="@+id/et_oib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewText="@string/oib"
+            app:editTextHint="@string/oibHint"
+            app:dataType="2"
+            app:dataLength="11"
+            app:errorText="@string/oibError"
+            app:layout_constraintTop_toBottomOf="@id/et_age" />
+
+        <hr.vsite.map.sofascoreaa_zad1.EditStringText
+            android:id="@+id/et_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewText="@string/number"
+            app:editTextHint="@string/number"
+            app:dataType="2"
+            app:dataLength="11"
+            app:errorText="@string/oibError"
+            app:layout_constraintTop_toBottomOf="@id/et_oib" />
+
+        <TextView
+            android:id="@+id/tv_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/gender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_number"
+            />
+        <include
+            android:id="@+id/radio_group"
+            layout="@layout/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_gender"
+            />
+        <TextView
+            android:id="@+id/tv_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/language"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radio_group"
+            />
+        <Spinner
+            android:id="@+id/sp_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_language"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <Button
+            android:id="@+id/button_add_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/add"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/sp_option"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

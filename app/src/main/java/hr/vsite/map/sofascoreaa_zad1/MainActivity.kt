@@ -1,31 +1,29 @@
 package hr.vsite.map.sofascoreaa_zad1
 
-import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.RadioButton
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
+import hr.vsite.map.sofascoreaa_zad1.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
 
-
+    private lateinit var binding: ActivityMainBinding
+    var gender = "Male"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    fun onTap(view: View) {
-        if (gumb.text == "Hide"){
-            tv_poruka.visibility= View.INVISIBLE
-            gumb.setText(R.string.show)
-        } else{
-            tv_poruka.visibility= View.VISIBLE
-            gumb.setText(R.string.hide)
-        }
+        val bottomNavigationView = binding.bottomNavigationView
+        val navController = findNavController(R.id.fragment)
+
+        bottomNavigationView.setupWithNavController(navController)
 
     }
+
 
 }
