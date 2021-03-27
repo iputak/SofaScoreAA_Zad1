@@ -14,4 +14,9 @@
         android:name="hr.vsite.map.sofascoreaa_zad1.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="hr.vsite.map.sofascoreaa_zad1.SettingsFragment"
+        android:label="fragment_settings2"
+        tools:layout="@layout/fragment_settings2" />
 </navigation>

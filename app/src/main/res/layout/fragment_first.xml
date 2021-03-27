@@ -8,7 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
         android:layout_marginTop="2dp"
         tools:context=".FirstFragment"
         >
@@ -25,6 +25,16 @@
             app:layout_constraintTop_toTopOf="parent"
             />
         <hr.vsite.map.sofascoreaa_zad1.EditStringText
+            android:id="@+id/et_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textViewText="@string/image"
+            app:editTextHint="@string/imgUrlHint"
+            app:dataType="0"
+            app:dataLength="20"
+            app:errorText="@string/firstNameError"
+            app:layout_constraintTop_toBottomOf="@id/tv_headline" />
+        <hr.vsite.map.sofascoreaa_zad1.EditStringText
             android:id="@+id/et_first_Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,7 +43,7 @@
             app:dataType="0"
             app:dataLength="20"
             app:errorText="@string/firstNameError"
-            app:layout_constraintTop_toBottomOf="@id/tv_headline" />
+            app:layout_constraintTop_toBottomOf="@id/et_image" />
 
         <hr.vsite.map.sofascoreaa_zad1.EditStringText
             android:id="@+id/et_last_name"

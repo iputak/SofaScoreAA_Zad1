@@ -4,7 +4,6 @@ import android.content.Context
 import android.text.InputType
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.widget.EditText
 import android.widget.FrameLayout
 import hr.vsite.map.sofascoreaa_zad1.databinding.EditTextStringBinding
 
@@ -14,7 +13,7 @@ const val TYPE_LONG = 2
 
 class EditStringText(context: Context, attributeSet: AttributeSet): FrameLayout (context,attributeSet){
 
-    val binding: EditTextStringBinding
+    private val binding: EditTextStringBinding
     private val dataType: Int
     private val dataLength: Int
     private val errorText: String

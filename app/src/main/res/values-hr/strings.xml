@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">SofaScore Android Academia</string>
+    <string name="selected_language">Hrvatski</string>
+
+    <string name="show">Pokaži</string>
+    <string name="hide">Sakrij</string>
+    <string name="hello_world">Pozdrav Svijete!</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- <string name=" "> </string> -->
+
+    <string name="add">Dodaj</string>
+    <string name="contacts">Kontakti</string>
+    <string name="createNewPerson">Kreiraj novu osobu</string>
+    <string name="firstName">Ime</string>
+    <string name="firstNameError">Ime ne može biti duže od 20 znakova</string>
+    <string name="lastName">Prezime</string>
+    <string name="lastNameError">Prezime ne može biti duže od 20 znakova</string>
+    <string name="age">Godine</string>
+    <string name="ageError">Godine ne mogu biti veće od 150</string>
+    <string name="oib">OIB</string>
+    <string name="oibError">OIB mora imati 11 znamenki</string>
+    <string name="oibHint">12345678911</string>
+    <string name="number">Broj</string>
+    <string name="numberHint">0987654321</string>
+    <string name="twenty">20</string>
+    <string name="gender">Spol</string>
+    <string name="male">Muško</string>
+    <string name="female">Žensko</string>
+    <string name="language">Jezik</string>
+    <string name="croatian">Hrvatski</string>
+    <string name="english">Engleski</string>
+    <string name="select">Odaberite jednu od opcija</string>
+    <!-- Settings -->
+    <string name="settings">Postavke</string>
+    <string name="theme">Tema</string>
+    <string name="chooseLanguage">Odabir jezika</string>
+    <!-- Arrays -->
+    <!-- Languages -->
+    <string-array name="languages_array">
+        <item>Engleski</item>
+        <item>Hrvatski</item>
+    </string-array>
+    <string name="image">Slika</string>
+    <string name="imgUrlHint">https://www.sofascore.com/static/images/apple-icon-180x180.png</string>
+
+
+</resources>
