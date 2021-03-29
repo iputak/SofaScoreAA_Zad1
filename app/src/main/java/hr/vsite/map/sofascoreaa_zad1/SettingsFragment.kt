@@ -40,6 +40,7 @@ class SettingsFragment : Fragment() {
 
                 } else if(position == 1){
                     (activity as MainActivity?)!!.setLocate("hr")
+                    // Todo: promjena jezika radi, ali se "zblesira" i cijelo vrijeme recreate-a
                     (activity as MainActivity?)!!.recreate()
                 }
             }

@@ -42,17 +42,15 @@ class MainActivity : AppCompatActivity() {
     fun setLocate(Lang: String) {
 
         val locale = Locale(Lang)
-
         Locale.setDefault(locale)
-
         val config = Configuration()
-
         config.locale = locale
         baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
 
         val editor = getSharedPreferences("Settings", Context.MODE_PRIVATE).edit()
         editor.putString("My_Lang", Lang)
         editor.apply()
+
     }
 
     private fun loadLocate() {
