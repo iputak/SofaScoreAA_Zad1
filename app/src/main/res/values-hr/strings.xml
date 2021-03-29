@@ -43,6 +43,9 @@
     </string-array>
     <string name="image">Slika</string>
     <string name="imgUrlHint">https://www.sofascore.com/static/images/apple-icon-180x180.png</string>
+    <string name="toastPost">Polja za unos su resetirana</string>
+    <string name="ok">OK</string>
+    <string name="snackbarPost">Kontakt dodan!</string>
 
 
 </resources>

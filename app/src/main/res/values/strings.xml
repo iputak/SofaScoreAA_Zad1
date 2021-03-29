@@ -38,6 +38,11 @@
     <string name="theme">Theme</string>
     <string name="chooseLanguage">Choose Langauge</string>
 
+    <string name="snackbarPost">Contact added!</string>
+    <string name="toastPost">Fields are reseted</string>
+    <string name="ok">OK</string>
+
+
     <!-- Arrays -->
     <!-- Languages -->
     <string-array name="languages_array">

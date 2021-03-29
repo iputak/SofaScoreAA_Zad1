@@ -1,5 +1,6 @@
 package hr.vsite.map.sofascoreaa_zad1
 
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import hr.vsite.map.sofascoreaa_zad1.databinding.FragmentSettings2Binding
-
+import java.util.*
 
 
 class SettingsFragment : Fragment() {
@@ -34,15 +35,17 @@ class SettingsFragment : Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long ) {
+                if(position == 0){
+                    (activity as MainActivity?)!!.setLocate("en")
 
+                } else if(position == 1){
+                    (activity as MainActivity?)!!.setLocate("hr")
+                    (activity as MainActivity?)!!.recreate()
                 }
-
+            }
         }
         return root
     }
-
-
-
 }
 
 

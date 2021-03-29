@@ -24,12 +24,12 @@ class EditStringText(context: Context, attributeSet: AttributeSet): FrameLayout 
         addView(binding.root)
         context.theme.obtainStyledAttributes(attributeSet,R.styleable.EditStringText,0,0).apply {
             try {
-                binding.tvFirstName.text = getString(R.styleable.EditStringText_textViewText)
-                binding.etFirstName.hint = getString(R.styleable.EditStringText_editTextHint)
+                binding.tvName.text = getString(R.styleable.EditStringText_textViewText)
+                binding.etName.hint = getString(R.styleable.EditStringText_editTextHint)
                 dataType = getInteger(R.styleable.EditStringText_dataType, 0)
                 dataLength = getInteger(R.styleable.EditStringText_dataLength, 0)
                 errorText = getString(R.styleable.EditStringText_errorText) ?: ""
-                binding.etFirstName.inputType=
+                binding.etName.inputType=
                     when (dataType){
                         TYPE_STRING -> InputType.TYPE_TEXT_VARIATION_PERSON_NAME
                         TYPE_INT -> InputType.TYPE_CLASS_NUMBER
@@ -46,19 +46,19 @@ class EditStringText(context: Context, attributeSet: AttributeSet): FrameLayout 
         return when (dataType) {
             TYPE_STRING, TYPE_LONG -> {
                 if(dataLength > 0) {
-                    if(!(binding.etFirstName.text.isNullOrEmpty()) && binding.etFirstName.text.length < dataLength){
+                    if(!(binding.etName.text.isNullOrEmpty()) && binding.etName.text.length < dataLength){
                         true
                     } else {
-                        binding.etFirstName.error = errorText
+                        binding.etName.error = errorText
                         false
                     }
                 } else {
-                    !(binding.etFirstName.text.isNullOrEmpty())
+                    !(binding.etName.text.isNullOrEmpty())
                 }
             }
             TYPE_INT -> {
                 if(dataLength > 0) {
-                    binding.etFirstName.text?.let {
+                    binding.etName.text?.let {
                         val value = it.toString().toInt()
                         if (value <= dataLength){
                             true
@@ -71,7 +71,7 @@ class EditStringText(context: Context, attributeSet: AttributeSet): FrameLayout 
                         false
                     }
                 } else {
-                    binding.etFirstName.text?.let {
+                    binding.etName.text?.let {
                         true
                     } ?: let {
                         showError()
@@ -81,21 +81,21 @@ class EditStringText(context: Context, attributeSet: AttributeSet): FrameLayout 
             }
             else ->
             {
-                binding.etFirstName.error = errorText
+                binding.etName.error = errorText
                 false
             }
         }
     }
 
     private fun showError(){
-        binding.etFirstName.error = errorText
+        binding.etName.error = errorText
     }
 
     fun getCurrentText(): String {
-        return binding.etFirstName.text.toString()
+        return binding.etName.text.toString()
     }
 
     fun reset(){
-        binding.etFirstName.text.clear()
+        binding.etName.text.clear()
     }
 }

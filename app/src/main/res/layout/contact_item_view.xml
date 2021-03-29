@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
-    android:background="@drawable/btn_shape">
+    android:background="@drawable/btn_shape"
+    >
     <ImageView
         android:id="@+id/image"
         android:layout_width="64dp"
@@ -24,6 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:textSize="16sp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@id/age"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -34,6 +36,7 @@
         android:id="@+id/age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/name"
         app:layout_constraintTop_toBottomOf="@id/name"
@@ -43,6 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@id/age"
         app:layout_constraintTop_toTopOf="@id/age"
         app:layout_constraintBottom_toBottomOf="@id/age"
@@ -53,6 +57,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/age"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/gender"

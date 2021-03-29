@@ -29,7 +29,6 @@ class SecondFragment : Fragment() {
             val adapter = ContactsRecyclerAdapter(requireContext(),it)
             binding.recyclerView.adapter = adapter
         })
-
         return root
     }
 }

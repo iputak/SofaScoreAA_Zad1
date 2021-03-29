@@ -1,5 +1,6 @@
 package hr.vsite.map.sofascoreaa_zad1
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import contacts.Contact
 import hr.vsite.map.sofascoreaa_zad1.databinding.FragmentFirstBinding
 
@@ -24,7 +27,6 @@ class FirstFragment : Fragment() {
         val root = binding.root
         var spinner = ""
         var gender = "Male"
-
         //Add button click
         binding.buttonAddContact.setOnClickListener {
             if(binding.etFirstName.validate() && binding.etLastName.validate() && binding.etAge.validate() && binding.etOib.validate() && binding.etNumber.validate()) {
@@ -40,6 +42,8 @@ class FirstFragment : Fragment() {
                 )
                 //Dodavanje unesenih podataka
                 viewModel.addContact(contact)
+                //Kreiranje snackbar-a
+                createSnackbar()
                 //Reset EditText-ova
                 binding.etImage.reset()
                 binding.etFirstName.reset()
@@ -67,5 +71,15 @@ class FirstFragment : Fragment() {
         return root
     }
 
+    private fun createSnackbar() {
 
+        activity?.let {
+            Snackbar.make(it.findViewById(android.R.id.content), R.string.snackbarPost, Snackbar.LENGTH_LONG)
+                .setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_FADE)
+                .setBackgroundTint(Color.BLACK)
+                .setAction(R.string.ok){
+                    Toast.makeText(activity, R.string.toastPost, Toast.LENGTH_LONG).show()
+                }.show()
+        }
+    }
 }
