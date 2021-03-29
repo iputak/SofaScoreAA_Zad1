@@ -16,6 +16,7 @@ class SettingsFragment : Fragment() {
 
     private var _binding: FragmentSettings2Binding? = null
     private val binding get() = _binding!!
+    private val flag = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,11 +38,15 @@ class SettingsFragment : Fragment() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long ) {
                 if(position == 0){
                     (activity as MainActivity?)!!.setLocate("en")
+                    //(activity as MainActivity?)!!.recreate()
+                }
 
-                } else if(position == 1){
+                if(position == 1){
                     (activity as MainActivity?)!!.setLocate("hr")
                     // Todo: promjena jezika radi, ali se "zblesira" i cijelo vrijeme recreate-a
-                    (activity as MainActivity?)!!.recreate()
+                    
+                    (activity as MainActivity)!!.recreate()
+
                 }
             }
         }
