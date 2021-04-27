@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/firstFragment"
-        android:title="@string/add"
-        android:icon="@drawable/ic_group_add"
+        android:title="@string/search"
+        android:icon="@drawable/ic_search"
         />
     <item
         android:id="@+id/secondFragment"
-        android:title="@string/contacts"
-        android:icon="@drawable/ic_group"
+        android:title="@string/myCities"
+        android:icon="@drawable/star_0"
         />
     <item
         android:id="@+id/settingsFragment"
         android:title="@string/settings"
-        android:icon="@drawable/ic_settings"
+        android:icon="@drawable/settings"
         />
 </menu>

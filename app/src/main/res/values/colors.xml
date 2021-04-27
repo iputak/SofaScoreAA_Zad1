@@ -5,7 +5,7 @@
     <color name="colorAccent">#455CEF</color>
     <color name="white">#fff</color>
 
-    <color name="customPrimary">#425660</color>
+    <color name="customPrimary">#3089ff</color>
     <color name="customPrimaryDark">#21353E</color>
     <color name="customAccent">#ffffff</color>
 </resources>

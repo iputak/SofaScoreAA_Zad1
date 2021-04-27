@@ -9,8 +9,6 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import hr.vsite.map.sofascoreaa_zad1.databinding.FragmentSettings2Binding
-import java.util.*
-
 
 class SettingsFragment : Fragment() {
 
@@ -44,7 +42,7 @@ class SettingsFragment : Fragment() {
                 if(position == 1){
                     (activity as MainActivity?)!!.setLocate("hr")
                     // Todo: promjena jezika radi, ali se "zblesira" i cijelo vrijeme recreate-a
-                    
+
                     (activity as MainActivity)!!.recreate()
 
                 }
