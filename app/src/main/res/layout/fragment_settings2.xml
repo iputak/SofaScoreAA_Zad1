@@ -5,41 +5,109 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_height="wrap_content"
 android:layout_width="match_parent"
 android:fillViewport="true">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
         tools:context=".SettingsFragment"
         >
-        <TextView
-            android:id="@+id/tv_headline"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:text="@string/settings"
-            android:textSize="28sp"
-            android:textStyle="bold"
+            android:layout_height="?attr/actionBarSize"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            />
-        <TextView
-            android:id="@+id/tv_language"
+            android:background="@color/tint_primary"
+            android:theme="@style/CustomTheme"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/surface_1"
+                android:textSize="20sp"
+                />
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout
+            android:id="@+id/languageBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/language"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_headline"
-            />
-        <Spinner
-            android:id="@+id/sp_language"
+            android:orientation="vertical"
+            android:background="@drawable/spinner_card_view"
+            android:layout_margin="16dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            >
+                <TextView
+                    android:id="@+id/tv_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="@string/language"
+                    android:textColor="@color/tint_secondary"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="12sp"
+                    />
+                <Spinner
+                    android:id="@+id/sp_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="16sp"
+                    />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/cityBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tv_language"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+            android:orientation="vertical"
+            android:background="@drawable/spinner_card_view"
+            android:layout_margin="16dp"
+            app:layout_constraintTop_toBottomOf="@id/languageBox"
+            >
+                <TextView
+                    android:id="@+id/tv_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="@string/city"
+                    android:textColor="@color/tint_secondary"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="12sp"
+                    />
+                <Spinner
+                    android:id="@+id/sp_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="16sp"
+                    />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/unitBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/spinner_card_view"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintTop_toBottomOf="@id/cityBox"
+            >
+                <TextView
+                    android:id="@+id/tv_unit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="@string/chooseUnit"
+                    android:textColor="@color/tint_secondary"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="12sp"
+                    />
 
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

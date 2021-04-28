@@ -8,11 +8,11 @@
         <item name="android:fontFamily">@font/rockwell</item>
     </style>
 
-    <style name="CustomTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/customPrimary</item>
-        <item name="colorPrimaryDark">@color/customPrimaryDark</item>
-        <item name="colorAccent">@color/customAccent</item>
-        <item name="android:fontFamily">@font/rockwell</item>
+    <style name="CustomTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/tint_primary</item>
+        <item name="colorPrimaryDark">@color/dark</item>
+        <item name="colorAccent">@color/tint_secondary</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
     </style>
 
 </resources>

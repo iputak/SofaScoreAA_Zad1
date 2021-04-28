@@ -29,6 +29,10 @@ class SettingsFragment : Fragment() {
         val languageList = resources.getStringArray(R.array.languages_array)
         //Spinner
         binding.spLanguage.adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, languageList)
+        //Change city
+        val cityList = resources.getStringArray(R.array.cities_array)
+        //Spinner
+        binding.spLanguage.adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, cityList)
         return root
     }
 }
