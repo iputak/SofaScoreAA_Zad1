@@ -22,17 +22,15 @@ class SettingsFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentSettings2Binding.inflate(inflater, container, false)
         val root = binding.root
-        //Change title
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.settings)
 
-        //Change app language
+        //Change app language - spinner
         val languageList = resources.getStringArray(R.array.languages_array)
-        //Spinner
         binding.spLanguage.adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, languageList)
-        //Change city
+
+        //Change city - spinner
         val cityList = resources.getStringArray(R.array.cities_array)
-        //Spinner
-        binding.spLanguage.adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, cityList)
+        binding.spCity.adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, cityList)
+
         return root
     }
 }
