@@ -12,6 +12,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import contacts.Contact
 import hr.vsite.map.sofascoreaa_zad1.databinding.ActivityMainBinding
+import hr.vsite.map.sofascoreaa_zad1.helpers.LanguageHelper
 import java.util.*
 
 
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        loadLocate()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -39,23 +40,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.addContact(Contact("https://www.sofascore.com/static/images/apple-icon-180x180.png", "Ivan", "Putak", 26, 44971009900, 385917644529, "Male", "Croatian"))
     }
 
-    fun setLocate(Lang: String) {
-
-        val locale = Locale(Lang)
-        Locale.setDefault(locale)
-        val config = Configuration()
-        config.locale = locale
-        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
-        val editor = getSharedPreferences("Settings", Context.MODE_PRIVATE).edit()
-        editor.putString("My_Lang", Lang)
-        editor.apply()
-    }
-
-    private fun loadLocate() {
-        val sharedPreferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE)
-        val language = sharedPreferences.getString("My_Lang", "")
-        if (language != null) {
-            setLocate(language)
-        }
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(LanguageHelper.wrapLanguage(newBase))
     }
 }

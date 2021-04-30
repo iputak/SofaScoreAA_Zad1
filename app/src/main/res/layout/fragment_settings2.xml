@@ -215,7 +215,7 @@
                 android:textSize="14sp" />
 
             <Button
-                style="?android:attr/borderlessButtonStyle"
+                android:id="@+id/btn_more_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -226,7 +226,8 @@
                 android:lineHeight="20sp"
                 android:text="@string/moreInfo"
                 android:textColor="@color/tint_secondary"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                style="?android:attr/borderlessButtonStyle" />
         </LinearLayout>
 
         <Button
@@ -243,7 +244,6 @@
             android:text="@string/clearCities"
             android:textColor="@color/error"
             android:textSize="14sp"
-
             app:layout_constraintTop_toBottomOf="@id/aboutBox" />
 
         <Button
@@ -255,7 +255,7 @@
             android:height="20sp"
             android:background="@drawable/btn_destructive"
             android:fontFamily="@font/roboto_medium"
-            android:text="@string/clearCities"
+            android:text="@string/clearSearch"
             android:textColor="@color/error"
             android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/btn_clear_cities" />

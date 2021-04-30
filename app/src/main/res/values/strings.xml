@@ -2,6 +2,7 @@
     <!-- About app -->
     <string name="projectName">SofaScore Android Academy</string>
     <string name="classYear">Class 2021</string>
+    <string name="appNameHint">App Name</string>
     <string name="appName">Super Cool Weather App</string>
     <string name="apiCredit">API Credit</string>
     <string name="apiAuthor" translatable="false">metaweather</string>
@@ -45,7 +46,12 @@
     <string name="about">About</string>
     <string name="loremIpsum" translatable="false">Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis.</string>
     <string name="moreInfo">More info</string>
+
     <string name="clearCities">Clear my cities list</string>
+    <string name="clearCitiesPopoverHeadline">Clear my cities list?</string>
+    <string name="clearCitiesPopoverText">If you clear your cities list, your cities list will be empty.</string>
+    <string name="clearCitiesSnackbarText">My cities list is clear.</string>
+
     <string name="clearSearch">Clear recent search list</string>
     <string name="clearSearchPopoverHeadline">Clear recent search list?</string>
     <string name="clearSearchPopoverText">If you clear your recent search list, your home screen will be empty.</string>
@@ -54,7 +60,6 @@
 
     <string name="cancel">Cancel</string>
     <string name="clear">Clear</string>
-
 
 
     <string name="add">Add</string>
@@ -80,8 +85,6 @@
 
 
     <string name="select">Please Select an Option</string>
-
-
 
 
     <string name="snackbarPost">Contact added!</string>

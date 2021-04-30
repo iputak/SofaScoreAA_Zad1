@@ -72,6 +72,10 @@
     <string name="cancel">Prekid</string>
     <string name="clear">Brisanje</string>
     <string name="clearSearchSnackbarText">Popis nedavnog pretraživanja je prazan.</string>
+    <string name="appNameHint">Naziv aplikacije</string>
+    <string name="clearCitiesPopoverHeadline">Brisanje liste gradova?</string>
+    <string name="clearCitiesPopoverText">Ako izbrišete popis gradova, \"Moji gradovi\" bit će prazan.</string>
+    <string name="clearCitiesSnackbarText">Popis gradova je prazan.</string>
 
 
 </resources>
