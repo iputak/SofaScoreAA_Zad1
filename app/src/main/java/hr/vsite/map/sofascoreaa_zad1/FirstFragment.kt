@@ -25,48 +25,6 @@ class FirstFragment : Fragment() {
     ): View {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         val root = binding.root
-        var spinner = ""
-        var gender = "Male"
-        //Add button click
-        binding.buttonAddContact.setOnClickListener {
-            if(binding.etFirstName.validate() && binding.etLastName.validate() && binding.etAge.validate() && binding.etOib.validate() && binding.etNumber.validate()) {
-                val contact = Contact(
-                    binding.etImage.getCurrentText(),
-                    binding.etFirstName.getCurrentText(),
-                    binding.etLastName.getCurrentText(),
-                    binding.etAge.getCurrentText().toInt(),
-                    binding.etOib.getCurrentText().toLong(),
-                    binding.etNumber.getCurrentText().toLong(),
-                    gender,
-                    spinner
-                )
-                //Dodavanje unesenih podataka
-                viewModel.addContact(contact)
-                //Kreiranje snackbar-a
-                createSnackbar()
-                //Reset EditText-ova
-                binding.etImage.reset()
-                binding.etFirstName.reset()
-                binding.etLastName.reset()
-                binding.etAge.reset()
-                binding.etOib.reset()
-                binding.etNumber.reset()
-            }
-        }
-
-        //Spinner
-        val options = resources.getStringArray(R.array.languages_array)
-        binding.spOption.adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, options)
-        binding.spOption.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-            }
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long ) {
-                spinner = options[position]
-            }
-        }
-
-        binding.radioGroup.radioMale.setOnClickListener { gender = "Male" }
-        binding.radioGroup.radioFemale.setOnClickListener { gender = "Female" }
 
         return root
     }

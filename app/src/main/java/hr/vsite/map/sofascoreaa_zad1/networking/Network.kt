@@ -6,15 +6,17 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class Network {
     private val service: MetaWeatherService
-    private val baseUrl = "https://www.metaweather.com/"
+    private val baseUrl = "https://www.metaweather.com/api/location/"
 
     init {
         val httpClient = OkHttpClient.Builder()
-        val retrofit = Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).client(httpClient.build()).build()
+        val retrofit =
+            Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create())
+                .client(httpClient.build()).build()
         service = retrofit.create(MetaWeatherService::class.java)
     }
 
-    fun getService(): MetaWeatherService{
+    fun getService(): MetaWeatherService {
         return service
     }
 }
