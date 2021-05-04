@@ -120,6 +120,7 @@ class SettingsFragment : Fragment() {
                 //Cancel-remove popover
                 mAlertDialog.dismiss()
             }
+
         }
 
         //Clear recent search list

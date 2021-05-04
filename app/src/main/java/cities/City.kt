@@ -1,21 +1,15 @@
-package hr.vsite.map.sofascoreaa_zad1.networking.model
+package cities
 
 import java.io.Serializable
 import java.time.DateTimeException
 import java.util.*
 
-data class CityResponse(
-    //consolidated_weather
-    val consolidated_weather: List<City>,
+data class City(
     val timezone_name: String,
     val woeid: Int,
     val title: String,
+    val latt_long: String,
     val time: DateTimeException,
-    val latt_long: String
-
-) : Serializable
-
-data class City(
     val id: Int,
     val weather_state_name: String,
     val weather_state_abbr: String,
@@ -30,5 +24,8 @@ data class City(
     val humidity: Int,
     val visibility: Int,
     val predictability: Int
-)
-
+) : Serializable {
+    override fun toString(): String {
+        return "$timezone_name, $woeid, $title, $latt_long, $time, $id, $weather_state_name, $weather_state_abbr, $wind_direction_compass, $applicable_date, $min_temp, $max_temp, $the_temp, $wind_speed, $wind_direction, $air_pressure, $humidity, $visibility, $predictability"
+    }
+}

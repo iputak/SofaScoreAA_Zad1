@@ -2,20 +2,21 @@ package hr.vsite.map.sofascoreaa_zad1
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import contacts.Contact
+import cities.City
+
 import hr.vsite.map.sofascoreaa_zad1.networking.model.CityResponse
 
-class ContactsViewModel () : ViewModel(){
+class CityViewModel () : ViewModel(){
 
-    val contacts = MutableLiveData<ArrayList<Contact>>()
+    val contacts = MutableLiveData<ArrayList<City>>()
     val city = MutableLiveData<ArrayList<CityResponse>>()
     init {
         contacts.value = arrayListOf()
     }
 
-    fun addContact(contact: Contact) {
+    fun addCity(city: City) {
     // Do an asynchronous operation to fetch users.
-        contacts.value?.add(contact)
+        contacts.value?.add(city)
     }
 
 

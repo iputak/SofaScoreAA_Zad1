@@ -10,7 +10,7 @@ import hr.vsite.map.sofascoreaa_zad1.databinding.ActivityMainBinding
 class AboutActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAboutBinding
-    private val viewModel: ContactsViewModel by viewModels()
+    private val viewModel: CityViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

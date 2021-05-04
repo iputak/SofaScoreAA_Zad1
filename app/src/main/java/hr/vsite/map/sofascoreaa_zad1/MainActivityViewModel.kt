@@ -3,15 +3,13 @@ package hr.vsite.map.sofascoreaa_zad1
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import contacts.Contact
+import cities.City
 import hr.vsite.map.sofascoreaa_zad1.networking.Network
-import hr.vsite.map.sofascoreaa_zad1.networking.model.City
-import hr.vsite.map.sofascoreaa_zad1.networking.model.CityResponse
 import hr.vsite.map.sofascoreaa_zad1.networking.model.LocationResponse
 import kotlinx.coroutines.launch
 
 class MainActivityViewModel() : ViewModel() {
-    val contacts = MutableLiveData<ArrayList<Contact>>()
+    val contacts = MutableLiveData<ArrayList<City>>()
 
     //City
 
@@ -22,7 +20,7 @@ class MainActivityViewModel() : ViewModel() {
         contacts.value = arrayListOf()
     }
 
-    fun addContact(contact: Contact) {
+    fun addContact(contact: City) {
         // Do an asynchronous operation to fetch users.
         contacts.value?.add(contact)
     }

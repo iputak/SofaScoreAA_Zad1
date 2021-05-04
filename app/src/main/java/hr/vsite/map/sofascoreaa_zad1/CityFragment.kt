@@ -10,11 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
-import contacts.Contact
 import hr.vsite.map.sofascoreaa_zad1.databinding.FragmentFirstBinding
 
 class CityFragment : Fragment() {
-    private val viewModel: ContactsViewModel by activityViewModels()
+    private val viewModel: CityViewModel by activityViewModels()
 
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!

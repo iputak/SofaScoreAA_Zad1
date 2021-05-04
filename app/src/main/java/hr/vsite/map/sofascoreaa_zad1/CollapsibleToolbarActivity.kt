@@ -2,7 +2,7 @@ package hr.vsite.map.sofascoreaa_zad1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import contacts.Contact
+import cities.City
 import hr.vsite.map.sofascoreaa_zad1.databinding.ActivityCollapsibleToolbarBinding
 
 class CollapsibleToolbarActivity : AppCompatActivity() {
@@ -13,7 +13,8 @@ class CollapsibleToolbarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCollapsibleToolbarBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val contact = intent.getSerializableExtra("contact") as Contact
+        /*
+        val contact = intent.getSerializableExtra("contact") as City
         var cUrl = intent.getStringExtra("url")
 
         var cAge = intent.getStringExtra("age")
@@ -33,6 +34,9 @@ class CollapsibleToolbarActivity : AppCompatActivity() {
         binding.number.text = cNumber
         binding.gender.text = cGender
         binding.language.text = cLanguage
+
+
+         */
     }
 }
 
